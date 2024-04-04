@@ -13,10 +13,10 @@
 #include <string>
 #include <fstream>
 #include <regex>
-#include "Stroka.h"
-#include "StringM.h"
-#include "9.h"
-#include "LinkedList.h"
+#include "Dop/Stroka.h"
+#include "Dop/StringM.h"
+#include "Dop/9.h"
+#include "Dop/LinkedList.h"
 //#include <stdafx.h>
 //#include <alloc.h>
 using namespace std;
@@ -550,7 +550,6 @@ void qsortRecursive(int* mas, int size) {
 	}
 }
 
-
 void task4(void) {
 	char str1[] = "qwerty", str2[] = "1234567890";
 	char str3[80] = {};
@@ -735,7 +734,7 @@ tuple<int, int> countPrintedAndEmptySymbols(FILE* in) {
 void search(FILE* in, char* query) {
 	fseek(in, 0, SEEK_SET);
 	char* buffer = (char*)malloc(1024);
-	FILE* out = fopen("../5-search.txt", "w");
+	FILE* out = fopen("Dop/5-search.txt", "w");
 
 	if (out == nullptr) {
 		printf("Не удалось открыть выходной файл");
@@ -761,13 +760,13 @@ void search(FILE* in, char* query) {
 void movePageNumbers() {
 	char* line = (char*)malloc(1024);
 
-	ifstream ifs("test.txt");
+	ifstream ifs("Dop/test.txt");
 	if (!ifs) {
 		printf("Не удалось открыть файл test.txt");
 		return;
 	}
 
-	ofstream ofs("test-moved.txt");
+	ofstream ofs("Dop/test-moved.txt");
 	if (!ofs) {
 		printf("Не удалось открыть файл test-moved.txt");
 		return;
@@ -911,7 +910,7 @@ void open2() {
 	}
 }
 void open3() {
-	const char* fname = "8-fname.txt";
+	const char* fname = "Dop/8-fname.txt";
 	fstream ofs(fname, ios::out);
 
 	if (!ofs) {
